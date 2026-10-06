@@ -1,0 +1,104 @@
+{
+  "name": "my project n8n",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 21,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a6c36a46-d2e5-44e7-a3e7-11d61d99b881",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "sendTo": "sarojinit121@gmail.com",
+        "subject": "Greetings",
+        "emailType": "text",
+        "message": "Hi Keerthana",
+        "options": {
+          "senderName": "saroo",
+          "replyTo": "sarojinit121@gmail.com"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "9a691a6d-ce5f-43e7-bf05-06d6e6d59613",
+      "name": "Send a message",
+      "webhookId": "f07a8ec6-583c-4310-93e0-2e8968058547",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "aWCa2uP3OOgmTmdy",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 22,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        448,
+        0
+      ],
+      "id": "a4468d98-1af3-4a4a-aeef-ca2642d96713",
+      "name": "Schedule Trigger1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "70c26fce-aac6-4bda-a9d2-59631c464c2b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9068628af0a57d7781e1d67599534562ddbd0287ef251100b06e4c635b52f2a2"
+  },
+  "nodeGroups": [],
+  "id": "9KEIIxRSP2LZJh5z",
+  "tags": []
+}
